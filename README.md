@@ -78,7 +78,7 @@ order by e.emp_no;
 - Nearly as many retirement-age employees (almost 25,000) hold other senior staff roles, suggesting that the company could face a leadership vacuum in the near 
 future if it does not adequately prepare for these employees to leave the workforce.
 
-
+![Table showing number of retirement-age employees by title](retiring_titles_image.png)
 
 - There are 1,549 employees eligible for Pewlett-Hackard's proposed mentorship program. Employees are eligible if they were born in 1965. 
 
@@ -88,7 +88,7 @@ As it puts this information to use, the company should be careful to avoid age d
 programs. Selecting employees for such opportunities on the basis of age could pose risks when it comes to compliance with anti-discrimination policies.
 
 Pewlett-Hackard may want to expand mentorship program eligibility to people of other ages, both to avoid age discrimination issues and to keep filling its senior 
-talent pipeline. There are not nearly enough employees born in 1965 to fill the roles that will likely be vacated by the 1955-1958 cohort. Even if 
+talent pipeline. There are not nearly enough employees born in 1965 to fill the roles that will likely be vacated by the 1955-1958 cohort.
 
 The company has 21,698 engineers (as opposed to senior engineers) who were born after 1955. This suggests that it could fill many senior engineer roles from its own 
 ranks, if it can provide the appropriate levels of coaching, compensation and other incentives needed to train and retain this talent.
@@ -116,4 +116,6 @@ from post_1955_engineers;
 However, closer inspection reveals that ALL of these younger engineers were born between 1956 and 1965. These people are not terribly far from retirement age 
 themselves. This means that either our data set is incomplete, missing employees born after 1965, or that Pewlett-Hackard desperately needs to start recruiting 
 employees of more diverse age groups.
+
+![Screenshot of query and results showing number of engineers born between 1956 and 1965](almost_retiring_image.png)
 
