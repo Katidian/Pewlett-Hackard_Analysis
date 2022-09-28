@@ -25,8 +25,8 @@ from retirement_titles
 where (to_date = '9999-01-01')
 order by emp_no asc, to_date desc;
 
-select * from unique_titles
-limit 10;
+select * from unique_titles;
+
 
 
 -- Get the number of employees by most recent job title who are of retirement age
@@ -36,7 +36,7 @@ from unique_titles
 group by title
 order by count desc;
 
-select * from retiring_titles
+select * from retiring_titles;
 
 
 -- Get the employees eligible to participate in a mentorship program based on age
@@ -57,4 +57,43 @@ where (e.birth_date between '1965-01-01' and '1965-12-31')
 	and (de.to_date = '9999-01-01')
 order by e.emp_no;
 
-select * from mentorship_eligibility
+select * from mentorship_eligibility;
+
+select count(emp_no) from dept_emp
+where (to_date = '9999-01-01');
+
+-- Create a list of current engineers born after 1955
+select distinct on (e.emp_no) e.emp_no,
+	e.first_name,
+	e.last_name,
+	t.title,
+	t.to_date
+into post_1955_engineers
+from employees as e
+	inner join titles as t
+		on (e.emp_no = t.emp_no)
+where (e.birth_date > '1955-12-31')
+	and (t.title = 'Engineer')
+	and (t.to_date = '9999-01-01')
+order by e.emp_no;
+
+select count(distinct emp_no)
+from post_1955_engineers;
+
+
+select distinct on (e.emp_no) e.emp_no,
+	e.first_name,
+	e.last_name,
+	t.title,
+	t.to_date
+into almost_retiring_engineers
+from employees as e
+	inner join titles as t
+		on (e.emp_no = t.emp_no)
+where (e.birth_date between '1956-01-01' and '1965-12-31')
+	and (t.title = 'Engineer')
+	and (t.to_date = '9999-01-01')
+order by e.emp_no;
+
+select count(*) emp_no
+from almost_retiring_engineers;
